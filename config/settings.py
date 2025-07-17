@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-82@2mb22raxcs66_1+#d4x(3p=1)&@k((+3b3i0!_!f0kanzol
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.244.107.119', 'www.13.244.107.119']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'ip_tracking',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(minute=0, hour='*'),  # every hour
     },
 }
+
+
+CELERY_BROKER_URL = 'amqp://alxuser:yourpassword@localhost:5672//'
